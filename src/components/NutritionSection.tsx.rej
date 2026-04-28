@@ -1,0 +1,23 @@
+@@ -26,17 +26,17 @@
+       <div className="max-w-[1200px] mx-auto px-5 md:px-10 flex flex-col gap-5 md:gap-16 items-center">
+         {/* Desktop Headline */}
+-        <div className="hidden lg:block max-w-[700px] text-left w-full">
+-          <h2 className="text-white font-bold text-[32px] md:text-[42px] lg:text-[49px] leading-[1.05] tracking-[-0.02em] ml-7" >
++        <div className="hidden lg:block max-w-[700px] text-center w-full">
++          <h2 className="text-white font-bold text-[32px] md:text-[42px] lg:text-[49px] leading-[1.05] tracking-[-0.02em]" >
+             Nutrition is the highest-<br />frequency health decision<br />you make.
+           </h2>
+         </div>
+ 
+         {/* Mobile Headline */}
+-        <div className="lg:hidden w-full text-left">
+-          <h2 className="text-white font-bold text-[clamp(28px,4.5vw,44px)] leading-[1.05] tracking-[-0.02em] max-w-[600px]">
++        <div className="lg:hidden w-full text-center">
++          <h2 className="text-white font-bold text-[clamp(28px,4.5vw,44px)] leading-[1.05] tracking-[-0.02em] max-w-[600px] mx-auto">
+             Nutrition is the highest-<br />frequency health decision<br />you make.
+           </h2>
+         </div>
+ 
+         {/* Desktop Layout */}
+-        <div className="hidden lg:grid w-full bg-[rgba(230,239,255,0.02)] rounded-[40px] p-10 grid-cols-3 gap-6 border border-[rgba(230,239,255,0.05)] items-stretch">
++        <div className="hidden lg:grid w-full bg-[rgba(230,239,255,0.02)] rounded-[40px] p-8 grid-cols-3 gap-8 border border-[rgba(230,239,255,0.05)] items-stretch">

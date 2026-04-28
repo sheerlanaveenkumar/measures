@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/gellix/Gellix-TRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/gellix/Gellix-TRIAL-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/gellix/Gellix-TRIAL-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/gellix/Gellix-TRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --background: #000a19;
+  --foreground: #e6efff;
+}
+
+body {
+  background: #000a19;
+  color: #e6efff;
+  font-family: 'Gellix', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}

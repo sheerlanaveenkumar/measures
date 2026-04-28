@@ -1,0 +1,19 @@
+@@ -64,13 +64,13 @@
+             <div className="flex flex-col gap-2">
+-              <span className="bg-[#136CFB] text-white text-[11px] font-bold px-3 py-1 rounded-md self-start tracking-wider uppercase">
+-                Optimal
++              <span className="bg-[#136CFB] text-white text-[10px] font-bold px-2.5 py-1 rounded-md self-start tracking-wider uppercase">
++                OPTIMAL
+               </span>
+               <div className="flex items-center gap-2.5">
+-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#136CFB" xmlns="http://www.w3.org/2000/svg">
++                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" fill="currentColor" />
+                 </svg>
+-                <h3 className="text-white font-bold text-[21px] tracking-tight">Nutrition Advisor</h3>
++                <h3 className="text-white font-semibold text-[20px] tracking-tight">Nutrition Advisor</h3>
+               </div>
+             </div>
+ 
+-            <p className="text-[rgba(230,239,255,0.75)] text-[15px] font-medium leading-[1.65]">
++            <p className="text-[rgba(230,239,255,0.65)] text-[14px] font-medium leading-[1.65]">
