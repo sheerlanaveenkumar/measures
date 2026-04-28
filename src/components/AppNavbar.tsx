@@ -8,6 +8,8 @@ export default function AppNavbar() {
   const currentPath = pathname.replace(/\/$/, "") || "/";
   const isHome = currentPath === "/";
   const isWhatWeTest = currentPath === "/what-we-test";
+  const isWhoweare = currentPath === "/who-we-are";
+  const isFoundersStory = currentPath === "/founders-story";
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -52,18 +54,16 @@ export default function AppNavbar() {
         <div className="hidden md:flex items-center gap-8 bg-[#000A1926] backdrop-blur-[20px] px-10 h-10 rounded-full">
           <Link
             to="/what-we-test"
-            className={`${
-              isWhatWeTest ? "text-white" : "text-[#E6EFFF66]"
-            } text-sm font-medium hover:text-white transition-colors`}
+            className={`${isWhatWeTest || isWhoweare || isFoundersStory  ? "text-white" : "text-[#E6EFFF66]"
+              } text-sm font-medium hover:text-white transition-colors`}
           >
             What we test
           </Link>
           <span className="w-1 h-1 rounded-full bg-white/20" />
           <Link
             to="/#pricing"
-            className={`${
-              isHome ? "text-white" : "text-[#E6EFFF66]"
-            } text-sm font-medium hover:text-white transition-colors`}
+            className={`${isHome || isWhoweare || isFoundersStory  ? "text-white" : "text-[#E6EFFF66]"
+              } text-sm font-medium hover:text-white transition-colors`}
             onClick={() => {
               if (pathname === "/") {
                 document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
