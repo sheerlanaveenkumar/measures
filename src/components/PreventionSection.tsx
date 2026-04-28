@@ -5,11 +5,14 @@ export default function PreventionSection() {
         <div className="max-w-[820px] mx-auto flex flex-col items-center text-center ">
           {/* Top lines — cool blue gradient */}
           <h2
-            className="font-bold leading-[1.0] tracking-[-0.02em] text-transparent bg-clip-text"
+            className="font-bold tracking-[-0.02em] text-transparent bg-clip-text"
             style={{
-              fontSize: "clamp(34px, 7vw, 84px)",
+              fontFamily: "Gellix, sans-serif",
+              fontSize: "clamp(40px, 8vw, 84px)",
+              lineHeight: "0.95",
               backgroundImage:
-                "linear-gradient(180deg, #136cfb 0%, #29bcbc 100%)",
+                "radial-gradient(20% 42.13% at 0% 16.99%, rgba(255, 255, 255, 0.7) 0%, rgba(0, 49, 127, 0.5) 100%), radial-gradient(25.65% 122.64% at 0% 100%, #FFFFFF 0%, rgba(19, 108, 251, 0) 100%), radial-gradient(21.09% 83.96% at 1.3% 100%, #FFFFFF 0%, rgba(19, 108, 251, 0) 100%), radial-gradient(43.7% 88.32% at 75.88% 100%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(41.09% 78.11% at 72.39% 100%, #29BCBC 0%, rgba(41, 188, 188, 0) 100%), linear-gradient(132.31deg, #136CFB 18.45%, #29BCBC 56.72%, #FFFFFF 73.82%)",
+              backgroundBlendMode: "color-dodge",
             }}
           >
             A system for
@@ -25,11 +28,14 @@ export default function PreventionSection() {
 
           {/* Bottom lines — teal-to-white gradient */}
           <h2
-            className="font-bold leading-[1.0] tracking-[-0.02em] text-transparent bg-clip-text"
+            className="font-bold tracking-[-0.02em] text-transparent bg-clip-text"
             style={{
-              fontSize: "clamp(34px, 7vw, 84px)",
+              fontFamily: "Gellix, sans-serif",
+              fontSize: "clamp(40px, 8vw, 84px)",
+              lineHeight: "0.95",
               backgroundImage:
-                "linear-gradient(180deg, #29bcbc 0%, #e6efff 100%)",
+                "radial-gradient(20% 42.13% at 0% 16.99%, rgba(255, 255, 255, 0.7) 0%, rgba(0, 49, 127, 0.5) 100%), radial-gradient(25.65% 122.64% at 0% 100%, #FFFFFF 0%, rgba(19, 108, 251, 0) 100%), radial-gradient(21.09% 83.96% at 1.3% 100%, #FFFFFF 0%, rgba(19, 108, 251, 0) 100%), radial-gradient(43.7% 88.32% at 75.88% 100%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(41.09% 78.11% at 72.39% 100%, #29BCBC 0%, rgba(41, 188, 188, 0) 100%), linear-gradient(132.31deg, #136CFB 18.45%, #29BCBC 56.72%, #FFFFFF 73.82%)",
+              backgroundBlendMode: "color-dodge",
             }}
           >
             prevention
