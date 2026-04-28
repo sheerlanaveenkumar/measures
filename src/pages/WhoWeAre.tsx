@@ -127,133 +127,135 @@ export default function WhoWeArePage() {
       </div>
 
       <div className="relative z-10">
-      <AppNavbar />
+        <AppNavbar />
 
-      {/* Hero: Who we are */}
-      <section className="relative overflow-hidden pt-16 pb-10">
-        <div className="max-w-[1200px] mx-auto px-10 relative z-10">
-          <h1 className="text-white text-center font-bold text-[clamp(34px,4.5vw,52px)] tracking-tight">
-            Who we are
-          </h1>
-        </div>
-      </section>
-
-      {/* Founding team */}
-      <section className="py-10">
-        <div className="max-w-[1100px] mx-auto px-10 flex flex-col gap-10">
-          <div className="flex flex-col items-start text-left gap-3 max-w-[900px] mx-auto w-full">
-            <h2 className="text-white font-semibold text-[25px] leading-[100%] tracking-[-0.01em]">Founding team</h2>
-            <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal max-w-[640px]">
-              Built by veterans of Tubi, Uber, Apple, and Microsoft, Measures brings Silicon Valley's best engineering talent to the future of preventive health.
-            </p>
+        {/* Hero: Who we are */}
+        <section className="relative overflow-hidden pt-20 pb-0">
+          <div className="max-w-[1240px] mx-auto px-10 relative z-10">
+            <h1 className="text-white text-center font-bold text-[clamp(34px,4.5vw,52px)] tracking-tight">
+              Who we are
+            </h1>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[900px] mx-auto w-full">
-            {founders.map((f) => (
-              <div key={f.name} className="flex flex-col items-center text-left">
-                <span className="text-[#E6EFFF99] text-[16px] font-extrabold leading-[125%] tracking-normal mb-3 text-center">
-                  {f.title}
-                </span>
-                <div
-                  className={`w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br ${f.accent} relative`}
-                >
-                  <img
-                    src={f.photo}
-                    alt={f.name}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="mt-5 w-full flex flex-col gap-3">
-                  <h3 className="text-[#E6EFFF] font-extrabold text-[16px] leading-[125%] tracking-normal">{f.name}</h3>
-                  <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
-                    {f.bio}
-                  </p>
-                  <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
-                    {f.priorLine}
-                  </p>
-                  <div className="flex flex-col gap-2 pt-1">
-                    {f.companies.map(({ name, Logo }) => (
-                      <div key={name} className="flex items-center gap-2">
-                        <Logo />
-                        <span className="text-[#E6EFFF99] text-[13px] font-medium leading-[125%] tracking-[0.01em]">
-                          {name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {f.name === 'Michael "Ahi" Ahiakpor' && (
-                    <div className="pt-4 ml-16">
-                      <Link
-                        to="/founders-story"
-                        className="bg-white text-[#000A19] font-semibold text-[16px] leading-[100%] lg:w-[250px] w-[200px] h-[48px] pt-[14px] pr-[20px] pb-[18px] pl-[20px] rounded-[32px] flex items-center justify-center hover:bg-[#e6efff] transition-colors shadow-md"
-                      >
-                        Founder's Story
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Founding team */}
+        <section className="py-10">
+          <div className="max-w-[1100px] mx-auto px-10 flex flex-col gap-10">
+            <div className="flex flex-col items-start text-left gap-3 max-w-[900px] mx-auto w-full">
+              <h2 className="text-white font-semibold text-[25px] leading-[100%] tracking-[-0.01em]">Founding team</h2>
+              <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal max-w-[640px]">
+                Built by veterans of Tubi, Uber, Apple, and Microsoft, Measures brings Silicon Valley's best engineering talent to the future of preventive health.
+              </p>
+            </div>
 
-        </div>
-      </section>
-
-      {/* Medical advisors */}
-      <section className="py-16">
-        <div className="max-w-[1100px] mx-auto px-10 flex flex-col gap-10">
-          <div className="flex flex-col gap-3 max-w-[900px] mx-auto w-full">
-            <h2 className="text-white font-semibold text-[25px] leading-[100%] tracking-[-0.01em]">Medical advisors</h2>
-            <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
-              Guided by physicians from Stanford, Duke, and the University of Washington, Measures brings world-class medical expertise to everyday preventive care.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-10 max-w-[900px] mx-auto w-full">
-            {advisors.map((a) => (
-              <div key={a.name} className="flex items-start gap-5">
-                <div
-                  className={`w-[150px] h-[100px] rounded-[8px] overflow-hidden bg-gradient-to-br ${a.avatarGradient} flex-shrink-0 relative`}
-                >
-                  <img
-                    src={a.photo}
-                    alt={a.name}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2 flex-1 min-w-0">
-                  <span className="text-[#E6EFFF99] text-[16px] font-extrabold leading-[125%] tracking-normal">
-                    {a.specialty}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[900px] mx-auto w-full">
+              {founders.map((f) => (
+                <div key={f.name} className="flex flex-col items-center text-left">
+                  <span className="text-[#E6EFFF99] text-[16px] font-extrabold leading-[125%] tracking-normal mb-3 text-center">
+                    {f.title}
                   </span>
-                  <h3 className="text-[#E6EFFF] font-extrabold text-[16px] leading-[125%] tracking-normal">{a.name}</h3>
-                  <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
-                    {a.education}
-                  </p>
-                  <div className="flex flex-col gap-1.5 pt-1">
-                    {a.affiliations.map(({ name, Logo }) => (
-                      <div key={name} className="flex items-center gap-2">
-                        <Logo />
-                        <span className="text-[#E6EFFF99] text-[13px] font-medium leading-[125%] tracking-[0.01em]">
-                          {name}
-                        </span>
+                  <div
+                    className={`w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br ${f.accent} relative`}
+                  >
+                    <img
+                      src={f.photo}
+                      alt={f.name}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="mt-5 w-full flex flex-col gap-3">
+                    <h3 className="text-[#E6EFFF] font-extrabold text-[16px] leading-[125%] tracking-normal">{f.name}</h3>
+                    <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
+                      {f.bio}
+                    </p>
+                    <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
+                      {f.priorLine}
+                    </p>
+                    <div className="flex flex-col gap-2 pt-1">
+                      {f.companies.map(({ name, Logo }) => (
+                        <div key={name} className="flex items-center gap-2">
+                          <Logo />
+                          <span className="text-[#E6EFFF99] text-[13px] font-medium leading-[125%] tracking-[0.01em]">
+                            {name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {f.name === 'Michael "Ahi" Ahiakpor' && (
+                      <div className="pt-4 ml-16">
+                        <Link
+                          to="/founders-story"
+                          className="bg-white text-[#000A19] font-semibold text-[16px] leading-[100%] lg:w-[250px] w-[200px] h-[48px] pt-[14px] pr-[20px] pb-[18px] pl-[20px] rounded-[32px] flex items-center justify-center gap-[10px] hover:bg-[#e6efff] transition-colors shadow-md"
+                        >
+                          Founder's Story
+                        </Link>
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Measures membership — shared component for consistency across pages */}
-      <PricingSection />
+        {/* Medical advisors */}
+        <section className="py-16">
+          <div className="max-w-[1100px] mx-auto px-10 flex flex-col gap-10">
+            <div className="flex flex-col gap-3 max-w-[900px] mx-auto w-full">
+              <h2 className="text-white font-semibold text-[25px] leading-[100%] tracking-[-0.01em]">Medical advisors</h2>
+              <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
+                Guided by physicians from Stanford, Duke, and the University of Washington, Measures brings world-class medical expertise to everyday preventive care.
+              </p>
+            </div>
 
-      <Footer />
+            <div className="flex flex-col gap-10 max-w-[900px] mx-auto w-full">
+              {advisors.map((a) => (
+                <div key={a.name} className="flex items-start gap-5">
+                  <div
+                    className={`w-[150px] h-[100px] rounded-[8px] overflow-hidden bg-gradient-to-br ${a.avatarGradient} flex-shrink-0 relative`}
+                  >
+                    <img
+                      src={a.photo}
+                      alt={a.name}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2 flex-1 min-w-0">
+                    <div className="flex items-center gap-3 -mt-1">
+                      <span className="text-[#E6EFFF99] text-[16px] font-extrabold leading-[125%] tracking-normal">
+                        {a.specialty}
+                      </span>
+                    </div>
+                    <h3 className="text-[#E6EFFF] font-extrabold text-[16px] leading-[125%] tracking-normal">{a.name}</h3>
+                    <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal">
+                      {a.education}
+                    </p>
+                    <div className="flex flex-col gap-1.5 pt-1">
+                      {a.affiliations.map(({ name, Logo }) => (
+                        <div key={name} className="flex items-center gap-2">
+                          <Logo />
+                          <span className="text-[#E6EFFF99] text-[13px] font-medium leading-[125%] tracking-[0.01em]">
+                            {name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Measures membership — shared component for consistency across pages */}
+        <PricingSection />
+
+        <Footer />
       </div>
     </div>
   );

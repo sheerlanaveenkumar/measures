@@ -31,9 +31,13 @@ export default function FoundersStoryPage() {
 
         {/* Intro paragraph */}
         <section className="pb-10">
-          <div className="max-w-[820px] mx-auto px-10">
-            <p className="text-[#E6EFFF] text-[15px] md:text-[16px] font-medium leading-[125%] tracking-normal text-left">
-              After more than a decade building Tubi from a scrappy six-person startup into one of streaming's most-watched platforms, Michael Ahiakpor had learned a thing or two about scale; and about what it takes to make something people actually use. But when he stepped away from Tubi in 2024, it wasn't another entertainment venture calling his name. It was something more personal.
+          <div className="max-w-[820px] mx-auto px-10 md:px-10 lg:px-20">
+            <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal text-left">
+              After more than a decade building Tubi from a scrappy six-person startup into one of <br className="hidden md:block" />
+              streaming's most-watched platforms, Michael Ahiakpor had learned a thing or two <br className="hidden md:block" />
+              about scale; and about what it takes to make something people actually use. But when <br className="hidden md:block" />
+              he stepped away from Tubi in 2024, it wasn't another entertainment venture calling his <br className="hidden md:block" />
+              name. It was something more personal.
             </p>
           </div>
         </section>
@@ -49,9 +53,13 @@ export default function FoundersStoryPage() {
 
         {/* Second paragraph */}
         <section className="py-10">
-          <div className="max-w-[820px] mx-auto px-10">
-            <p className="text-[#E6EFFF] text-[15px] md:text-[16px] font-medium leading-[125%] tracking-normal text-left">
-              Like many people in their late 40s, Michael found himself navigating a healthcare system that felt reactive by design; one that waited for problems to appear rather than helping people get ahead of them. He believed the same data-driven, user-obsessed thinking that transformed how millions of people watch TV could do something far more meaningful: transform how people manage their health.
+          <div className="max-w-[820px] mx-auto px-10 md:px-10 lg:px-20">
+            <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal text-left">
+              Like many people in their late 40s, Michael found himself navigating a healthcare <br className="hidden md:block" />
+              system that felt reactive by design; one that waited for problems to appear rather than <br className="hidden md:block" />
+              helping people get ahead of them. He believed the same data-driven, user-obsessed <br className="hidden md:block" />
+              thinking that transformed how millions of people watch TV could do something far more <br className="hidden md:block" />
+              meaningful: transform how people manage their health.
             </p>
           </div>
         </section>
@@ -72,9 +80,10 @@ export default function FoundersStoryPage() {
 
         {/* Third paragraph */}
         <section className="py-10">
-          <div className="max-w-[820px] mx-auto px-10">
+          <div className="max-w-[820px] mx-auto px-10 md:px-20 lg:px-20">
             <p className="text-[#E6EFFF99] text-[12px] md:text-[13px] font-medium leading-[125%] tracking-normal text-left">
-              Since founding Measures, Michael has applied the platform's data-driven approach daily to his own health, and at 50+, he's in the best shape of his life to prove it.
+              Since founding Measures, Michael has applied the platform's data-driven approach daily to his own <br className="hidden md:block" />
+              health, and at 50+, he's in the best shape of his life to prove it.
             </p>
           </div>
         </section>
@@ -90,12 +99,18 @@ export default function FoundersStoryPage() {
 
         {/* Fourth paragraph */}
         <section className="py-10">
-          <div className="max-w-[820px] mx-auto px-10 flex flex-col gap-6">
+          <div className="max-w-[820px] mx-auto px-10 md:px-10 lg:px-20 flex flex-col gap-6">
             <p className="text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal text-left">
-              That conviction became Measures. Built alongside engineers from Uber, Apple, and Microsoft, and guided by physicians from Stanford, Duke, and the University of Washington, Measures is designed to make preventive health actionable not just informational. The same rigor Michael applied to product decisions at Tubi, grounded in data and relentlessly focused on the user experience, now drives how Measures helps people understand their bodies and stay ahead of disease.
+              That conviction became Measures. Built alongside engineers from Uber, Apple, and <br className="hidden md:block" />
+              Microsoft, and guided by physicians from Stanford, Duke, and the University of <br className="hidden md:block" />
+              Washington, Measures is designed to make preventive health actionable not just <br className="hidden md:block" />
+              informational. The same rigor Michael applied to product decisions at Tubi, grounded in <br className="hidden md:block" />
+              data and relentlessly focused on the user experience, now drives how Measures helps <br className="hidden md:block" />
+              people understand their bodies and stay ahead of disease.
             </p>
-            <p className="pt-5 text-[#E6EFFF]  text-[16px] font-medium leading-[125%] tracking-normal text-left">
-              For Michael, this isn't just a pivot it's a purpose. If great technology could make free TV accessible to millions, it could do the same for proactive, personalized healthcare.
+            <p className="pt-5 text-[#E6EFFF] text-[16px] font-medium leading-[125%] tracking-normal text-left">
+              For Michael, this isn't just a pivot it's a purpose. If great technology could make free TV <br className="hidden md:block" />
+              accessible to millions, it could do the same for proactive, personalized healthcare.
             </p>
           </div>
         </section>

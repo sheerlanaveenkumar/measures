@@ -1,5 +1,6 @@
 import CalorieTracker from "./CalorieTracker";
 import Advisor from '@/assets/nut_advisor.png'
+import LongevityOutlook from '@/assets/logevity_outlook.png'
 const biomarkers = [
   { label: "Apolipoprotein B (ApoB)", value: "85", unit: "mg/dL", status: "Normal", color: "#29bcbc", bg: "rgba(41,188,188,0.03)" },
   { label: "Hemoglobin A1c", value: "5.4", unit: "%", status: "Normal", color: "#29bcbc", bg: "rgba(41,188,188,0.03)" },
@@ -39,7 +40,7 @@ export default function NutritionSection() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:grid w-full bg-[rgba(230,239,255,0.02)] rounded-[40px] p-8 grid-cols-[1.3fr_1.1fr_0.9fr] gap-8 border border-[rgba(230,239,255,0.05)] items-stretch">
+        <div className="hidden lg:grid w-full bg-[rgba(230,239,255,0.02)] rounded-[40px] p-10 grid-cols-[1.2fr_1.1fr_1.1fr] gap-10 border border-[rgba(230,239,255,0.05)] items-stretch">
           {/* Biomarker Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             {biomarkers.map((b) => (
@@ -52,16 +53,25 @@ export default function NutritionSection() {
                   <p className="text-[rgba(230,239,255,0.6)] text-[11px] font-semibold tracking-tight whitespace-nowrap overflow-hidden text-overflow-ellipsis">{b.label}</p>
                   <div className="flex items-baseline gap-1.5 pt-1">
                     <span className="font-bold text-[32px] leading-none tracking-tighter" style={{ color: b.color }}>{b.value}</span>
-                    <span className="text-[rgba(230,239,255,0.4)] text-[11px] font-medium">{b.unit}</span>
+                    <span className="text-[11px] font-medium"style={{ color: b.color }}>{b.unit}</span>
                   </div>
                 </div>
-                <span className="text-[12px] font-semibold" style={{ color: b.color }}>{b.status}</span>
+                <span className="text-[12px] font-semibold text-[rgba(230,239,255,0.4)]">{b.status}</span>
               </div>
             ))}
           </div>
 
           {/* AI Advisor Card */}
-          <div className="flex flex-col gap-5 h-full pt-1 px-1">
+          <div 
+            className="flex flex-col gap-6 h-full rounded-[16px] bg-[#000A194D]"
+            style={{ 
+              width: '100%',
+              maxWidth: '360px', 
+              height: '274px', 
+              padding: '24px 20px',
+              border: '1px solid rgba(230,239,255,0.05)'
+            }}
+          >
             <div className="flex flex-col gap-2">
               <span className="bg-[#136CFB] text-white text-[10px] font-bold px-2.5 py-1 rounded-md self-start tracking-wider uppercase">
                 OPTIMAL
@@ -75,7 +85,7 @@ export default function NutritionSection() {
               </div>
             </div>
 
-            <p className="text-[rgba(230,239,255,0.65)] text-[14px] font-medium leading-[1.65]">
+            <p className="text-[rgba(230,239,255,0.65)] text-[12px] font-medium leading-[1.65]">
               This oatmeal and blueberry meal is a nutritionally strong choice with excellent fiber,{" "}
               <span className="text-[#136CFB] font-bold">magnesium</span>,{" "}
               <span className="text-[#136CFB] font-bold">zinc</span>, and moderate protein. It aligns well with
@@ -86,253 +96,31 @@ export default function NutritionSection() {
             </p>
           </div>
 
-          {/* Longevity Score (Integrated Chart) */}
-          <div className="flex flex-col gap-2 p-2 h-full">
-            <div className="flex items-center justify-between mb-1">
-              <p className="text-[#e6efff] text-[12px] font-bold tracking-tight">Longevity Outlook Score</p>
-              <p className="text-[rgba(230,239,255,0.5)] text-[12px] font-bold tracking-tight">Average</p>
-            </div>
-
-            <div className="flex items-center gap-2 text-[#136cfb] mb-2">
-              <span className="text-[39px] font-bold leading-none tracking-tighter">85</span>
-              <span className="text-[15px] font-bold tracking-[0.15em] uppercase translate-y-2">SCORE</span>
-            </div>
-
-            <div className="relative h-[5px] w-full rounded-full mb-3" style={{ background: "rgba(230,239,255,0.08)" }}>
-              <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #de6c21 0%, #de6c21 45%, #29bcbc 68%, #136cfb 85%, #136cfb 100%)" }} />
-              <div className="absolute top-[-14px] transform -translate-x-1/2" style={{ left: "85%" }}>
-                <svg width="12" height="10" viewBox="0 0 14 12" fill="none"><path d="M7 12L0 0H14L7 12Z" fill="#29bcbc" /></svg>
-              </div>
-            </div>
-
-            <div className="relative h-5 mb-1">
-              {[0, 55, 69, 85, 100].map(v => (
-                <span
-                  key={v}
-                  className="absolute text-[rgba(230,239,255,0.8)] text-[11px] font-semibold transform -translate-x-1/2"
-                  style={{ left: `${v}%` }}
-                >
-                  {v}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <div className="flex gap-5">
-                <div className="relative h-[140px] flex-1">
-                  <svg viewBox="0 0 280 100" className="w-full h-full" preserveAspectRatio="none" overflow="visible">
-                    {/* Horizontal Dotted Grid */}
-                    {[0, 55, 69, 85, 100].map((val) => {
-                      const y = 100 - val;
-                      const colors: Record<number, string> = { 0: "#de6c21", 55: "#de6c21", 69: "#29bcbc", 85: "#136cfb", 100: "#136cfb" };
-                      return (
-                        <line key={val} x1="0" y1={y} x2="280" y2={y} stroke={colors[val]} strokeWidth="0.8" strokeDasharray="2 4" opacity="0.4" />
-                      );
-                    })}
-
-                    <defs>
-                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        {scoreData.map((pt, i) => (
-                          <stop
-                            key={i}
-                            offset={`${(i / (scoreData.length - 1)) * 100}%`}
-                            stopColor={pt.color}
-                          />
-                        ))}
-                      </linearGradient>
-                    </defs>
-
-                    {/* Chart Line with Gradient */}
-                    <path
-                      d={scoreData.map((pt, i) => {
-                        const x = (i / (scoreData.length - 1)) * 280;
-                        const y = 100 - pt.score;
-                        return `${i === 0 ? "M" : "L"} ${x} ${y}`;
-                      }).join(" ")}
-                      fill="none"
-                      stroke="url(#chartGradient)"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-
-                    {/* Points and Labels */}
-                    {scoreData.map((pt, i) => {
-                      const x = (i / (scoreData.length - 1)) * 280;
-                      const y = 100 - pt.score;
-                      return (
-                        <g key={i}>
-                          <circle cx={x} cy={y} r="4.5" fill={pt.color} stroke="#000a19" strokeWidth="2" />
-                          <text x={x} y={y - 12} textAnchor="middle" fontSize="11" fontWeight="800" fill={pt.color}>{pt.score}</text>
-                        </g>
-                      );
-                    })}
-                  </svg>
-                </div>
-
-                {/* Right Y-Axis value labels positioned absolutely to match grid lines */}
-                <div className="relative w-7 shrink-0">
-                  {[0, 55, 69, 85, 100].map((val) => {
-                    const y = 100 - val;
-                    const colors: Record<number, string> = { 0: "#de6c21", 55: "#de6c21", 69: "#29bcbc", 85: "#136cfb", 100: "#136cfb" };
-                    return (
-                      <span
-                        key={val}
-                        className="absolute right-1 text-[11px] font-bold leading-none transform -translate-y-1/2"
-                        style={{ top: `${y}%`, color: colors[val], opacity: val === 0 ? 0.4 : 1 }}
-                      >
-                        {val}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* X-Axis Date Labels (Aligned within the flex-1 area) */}
-              <div className="flex gap-5 pt-4">
-                <div className="flex-1 flex justify-between items-center px-0">
-                  {scoreData.map((d, i) => (
-                    <span
-                      key={i}
-                      className={`text-[10px] w-0 flex justify-center whitespace-nowrap ${d.date === "1/1/26" ? "text-white font-bold" : "text-[rgba(230,239,255,0.5)] font-medium"}`}
-                    >
-                      {d.date}
-                    </span>
-                  ))}
-                </div>
-                <div className="w-7 shrink-0"></div>
-              </div>
-            </div>
+          <div 
+            className="flex flex-col h-full items-center justify-center"
+            style={{ 
+              width: '100%',
+              maxWidth: '360px', 
+              height: '280px', 
+            }}
+          >
+            <img 
+              src={LongevityOutlook} 
+              alt="Longevity Outlook Score" 
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
 
         {/* Mobile Blueprint Layout */}
         <div className="lg:hidden w-full flex flex-col gap-10">
           {/* Top Score Section */}
-          <div className="flex flex-col gap-6 max-w-[400px] mx-auto w-full">
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <p className="text-[#e6efff] text-[12px] font-bold tracking-tight">Longevity Outlook Score</p>
-                <p className="text-[rgba(230,239,255,0.5)] text-[12px] font-bold tracking-tight">Average</p>
-              </div>
-
-              <div className="flex items-baseline gap-2 text-[#136cfb]">
-                <span className="text-[39px] font-bold leading-none tracking-tighter">85</span>
-                <span className="text-[16px] font-bold tracking-widest uppercase opacity-80">score</span>
-              </div>
-
-              {/* Progress bar */}
-              <div className="relative h-[5px] w-full rounded-full mt-2 mb-3" style={{ background: "rgba(230,239,255,0.08)" }}>
-                <div
-                  className="h-full rounded-full"
-                  style={{
-                    width: "100%",
-                    background: "linear-gradient(90deg, #de6c21 0%, #de6c21 45%, #29bcbc 68%, #136cfb 85%, #136cfb 100%)",
-                  }}
-                />
-                <div className="absolute top-[-10px] transform -translate-x-1/2" style={{ left: "81%" }}>
-                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-                    <path d="M7 10L0 0H14L7 10Z" fill="#29bcbc" />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="relative h-5 mb-2">
-                {[0, 55, 69, 85, 100].map(v => (
-                  <span
-                    key={v}
-                    className="absolute text-[rgba(230,239,255,0.7)] text-[12px] font-bold transform -translate-x-1/2"
-                    style={{ left: `${v}%` }}
-                  >
-                    {v}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Chart */}
-            <div className="flex flex-col gap-4 py-4">
-              <div className="flex gap-4">
-                <div className="relative h-[140px] flex-1">
-                  <svg viewBox="0 0 280 100" className="w-full h-full" preserveAspectRatio="none" overflow="visible">
-                    {/* Horizontal Dotted Grid */}
-                    {[0, 55, 69, 85, 100].map((val) => {
-                      const y = 100 - val;
-                      const colors: Record<number, string> = { 0: "#de6c21", 55: "#de6c21", 69: "#29bcbc", 85: "#136cfb", 100: "#136cfb" };
-                      return (
-                        <line key={val} x1="0" y1={y} x2="280" y2={y} stroke={colors[val]} strokeWidth="0.8" strokeDasharray="2 4" opacity="0.4" />
-                      );
-                    })}
-
-                    <defs>
-                      <linearGradient id="chartGradientMobile" x1="0%" y1="0%" x2="100%" y2="0%">
-                        {scoreData.map((pt, i) => (
-                          <stop
-                            key={i}
-                            offset={`${(i / (scoreData.length - 1)) * 100}%`}
-                            stopColor={pt.color}
-                          />
-                        ))}
-                      </linearGradient>
-                    </defs>
-
-                    {/* Chart Line with Gradient */}
-                    <path
-                      d={scoreData.map((pt, i) => {
-                        const x = (i / (scoreData.length - 1)) * 280;
-                        const y = 100 - pt.score;
-                        return `${i === 0 ? "M" : "L"} ${x} ${y}`;
-                      }).join(" ")}
-                      fill="none"
-                      stroke="url(#chartGradientMobile)"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-
-                    {/* Points and Labels */}
-                    {scoreData.map((pt, i) => {
-                      const x = (i / (scoreData.length - 1)) * 280;
-                      const y = 100 - pt.score;
-                      return (
-                        <g key={i}>
-                          <circle cx={x} cy={y} r="4.5" fill={pt.color} stroke="#000a19" strokeWidth="2" />
-                          <text x={x} y={y - 12} textAnchor="middle" fontSize="11" fontWeight="800" fill={pt.color}>{pt.score}</text>
-                        </g>
-                      );
-                    })}
-                  </svg>
-                </div>
-                {/* Right Y-Axis value labels positioned absolutely */}
-                <div className="relative w-7 shrink-0">
-                  {[0, 55, 69, 85, 100].map((val) => {
-                    const y = 100 - val;
-                    const colors: Record<number, string> = { 0: "#de6c21", 55: "#de6c21", 69: "#29bcbc", 85: "#136cfb", 100: "#136cfb" };
-                    return (
-                      <span
-                        key={val}
-                        className="absolute right-1 text-[12px] font-bold leading-none transform -translate-y-1/2"
-                        style={{ top: `${y}%`, color: colors[val], opacity: val === 0 ? 0.4 : 1 }}
-                      >
-                        {val}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* X Axis Date Labels */}
-              <div className="flex justify-between items-center px-0 pt-4">
-                {scoreData.map((d, i) => (
-                  <span
-                    key={i}
-                    className={`text-[11px] w-0 flex justify-center whitespace-nowrap ${d.date === "1/1/26" ? "text-white font-bold" : "text-[rgba(230,239,255,0.35)] font-bold"}`}
-                  >
-                    {d.date}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="w-full">
+            <img 
+              src={LongevityOutlook} 
+              alt="Longevity Outlook Score" 
+              className="w-full h-auto object-contain"
+            />
           </div>
 
           {/* Biomarkers Grid - Refined for Mobile to match Desktop */}

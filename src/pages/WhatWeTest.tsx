@@ -19,11 +19,11 @@ const SearchIcon = () => (
 );
 
 const CheckIconDark = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
     <path
       d="M5 12l5 5L20 7"
-      stroke="rgba(230,239,255,0.6)"
-      strokeWidth="2.2"
+      stroke="rgba(230,239,255,0.7)"
+      strokeWidth="3.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -31,11 +31,11 @@ const CheckIconDark = () => (
 );
 
 const CheckIconLight = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
     <path
       d="M5 12l5 5L20 7"
       stroke="#000a19"
-      strokeWidth="2.5"
+      strokeWidth="3.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -80,12 +80,17 @@ function TestItem({
       <button
         type="button"
         onClick={onToggle}
-        className={`w-full flex items-center gap-3 px-5 py-4 rounded-2xl border transition-all text-left ${isOpen
+        className={`w-full flex items-center gap-3 pl-3.5 pr-5 py-4 rounded-2xl border transition-all text-left ${isOpen
           ? "bg-white border-white"
           : "bg-[rgba(230,239,255,0.03)] border-[rgba(230,239,255,0.07)] hover:bg-[rgba(230,239,255,0.06)]"
           }`}
       >
-        {isOpen ? <CheckIconLight /> : <CheckIconDark />}
+        <div 
+          className="flex items-center justify-center w-8 h-8 rounded-lg"
+          style={{ backgroundColor: isOpen ? 'rgba(0, 10, 25, 0.15)' : '#E6EFFF0D' }}
+        >
+          {isOpen ? <CheckIconLight /> : <CheckIconDark />}
+        </div>
         <span
           className={`font-medium text-[15px] ${isOpen ? "text-[#000a19]" : "text-[rgba(230,239,255,0.85)]"
             }`}
@@ -213,7 +218,7 @@ export default function WhatWeTestPage() {
           <AppNavbar />
 
           {/* Hero Content */}
-          <div className="flex-1 flex flex-col justify-center pt-10 pb-20">
+          <div className="flex-1 flex flex-col justify-center pt-10 pb-0">
             <div className="max-w-[1200px] mx-auto px-10 w-full">
               <h1 className="text-white text-center font-bold text-[clamp(34px,4.5vw,49px)] tracking-tight mb-8">
                 What we test
@@ -221,7 +226,7 @@ export default function WhatWeTestPage() {
             </div>
 
             {/* Intro Text */}
-            <div className="max-w-[760px] mx-auto px-10 flex flex-col items-center text-center gap-3">
+            <div className="max-w-[820px] ml-[10%] md:ml-[25%] px-10 flex flex-col items-start text-left gap-1">
               <h2 className="text-white font-bold text-[18px] tracking-tight self-start">
                 110 lab tests to give you the most accurate picture of your health
               </h2>
@@ -249,7 +254,7 @@ export default function WhatWeTestPage() {
 
       {/* Categories */}
       <section className="pt-24 pb-10">
-        <div className="max-w-[760px] mx-auto px-10 flex flex-col gap-12">
+        <div className="max-w-[840px] mx-auto px-10 flex flex-col gap-12">
           {isLoading ? (
             <div className="flex justify-center py-20">
               <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
@@ -258,7 +263,7 @@ export default function WhatWeTestPage() {
             <>
               {filteredCategories.map((cat) => (
                 <div key={cat.category} className="flex flex-col gap-6">
-                  <h3 className="text-white font-bold text-[22px] tracking-tight">{cat.category}</h3>
+                  <h3 className="text-white font-bold text-[22px] tracking-tight pl-15">{cat.category}</h3>
                   <div className="flex flex-col gap-8">
                     {cat.subPanels.map((sub, sIdx) => (
                       <div key={sIdx} className="flex flex-col gap-4">

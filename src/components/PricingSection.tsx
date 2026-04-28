@@ -32,10 +32,10 @@ const CheckIcon = () => (
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="w-full bg-[#000a19] py-16 md:py-24">
+    <section id="pricing" className="w-full bg-[#000a19] py-8 md:py-12">
       <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div 
-          className="w-full rounded-[48px] px-6 py-16 md:px-16 md:py-24 flex flex-col items-center"
+          className="w-full rounded-[48px] px-6 py-12 md:px-16 md:py-16 flex flex-col items-center"
           style={{ background: '#E6EFFF0D' }}
         >
           {/* Header copy */}
@@ -86,7 +86,7 @@ export default function PricingSection() {
 
             {/* Right Side: Features */}
             <div className="w-full md:w-[52%] p-8 md:p-12 bg-white flex flex-col justify-center border-t md:border-t-0 md:border-l border-[rgba(0,0,0,0.05)]">
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-2">
                 {features.map((f) => (
                   <li key={f} className="flex items-start gap-4 text-[#000A19] text-[16px] font-medium leading-[150%] tracking-normal">
                     <CheckIcon />

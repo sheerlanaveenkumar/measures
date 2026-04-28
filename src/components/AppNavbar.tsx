@@ -5,6 +5,9 @@ import logo from "../assets/logo.png";
 
 export default function AppNavbar() {
   const { pathname } = useLocation();
+  const currentPath = pathname.replace(/\/$/, "") || "/";
+  const isHome = currentPath === "/";
+  const isWhatWeTest = currentPath === "/what-we-test";
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -49,14 +52,18 @@ export default function AppNavbar() {
         <div className="hidden md:flex items-center gap-8 bg-white/[0.12] backdrop-blur-[20px] px-10 h-10 rounded-full">
           <Link
             to="/what-we-test"
-            className="text-white text-sm font-medium hover:text-white/80 transition-colors"
+            className={`${
+              isWhatWeTest ? "text-white/60" : "text-white"
+            } text-sm font-medium hover:text-white transition-colors`}
           >
             What we test
           </Link>
           <span className="w-1 h-1 rounded-full bg-white/20" />
           <Link
             to="/#pricing"
-            className="text-white text-sm font-medium hover:text-white/80 transition-colors"
+            className={`${
+              isHome ? "text-white" : "text-whites"
+            } text-sm font-medium hover:text-white transition-colors`}
             onClick={() => {
               if (pathname === "/") {
                 document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });

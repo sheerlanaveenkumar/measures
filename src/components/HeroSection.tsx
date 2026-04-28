@@ -62,7 +62,16 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 h-full flex flex-col justify-center pt-20 md:pt-32 pb-32 md:pb-[15vh]">
           <div className="max-w-[580px] flex flex-col gap-5 md:gap-2">
-            <p className="text-white/60 text-[12px] md:text-[13px] font-bold " style={{ color: '#E6EFFF' }}>
+            <p 
+              className="font-bold" 
+              style={{ 
+                color: '#E6EFFF', 
+                fontFamily: 'Gellix', 
+                fontSize: '18px', 
+                lineHeight: '100%', 
+                letterSpacing: '-0.03em' 
+              }}
+            >
               Measures
             </p>
 
