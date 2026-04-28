@@ -35,7 +35,7 @@ export default function HeroSection() {
       <img
         src={heroImage}
         alt="Runner at dawn"
-        className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-center brightness-110"
       />
       <img
         src={heroMobile}
