@@ -49,7 +49,7 @@ export default function AppNavbar() {
         </div>
 
         {/* Right: Menu pill */}
-        <div className="hidden md:flex items-center gap-8 bg-white/[0.12] backdrop-blur-[20px] px-10 h-10 rounded-full">
+        <div className="hidden md:flex items-center gap-8 bg-[#000A1926] backdrop-blur-[20px] px-10 h-10 rounded-full">
           <Link
             to="/what-we-test"
             className={`${
