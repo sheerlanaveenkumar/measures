@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const links = [
-  { label: "Contact Us", href: "/support" },
-  { label: "Privacy policy", href: "/support" },
-  { label: "Terms & Conditions", href: "/support" },
+  { label: "Contact Us", href: "mailto:support@measures.com" },
+  { label: "Privacy policy", href: "https://measures.com/privacy" },
+  { label: "Terms & Conditions", href: "https://measures.com/tos" },
   { label: "Informed Medical Consent", href: "/support" },
 ];
 
@@ -14,15 +14,26 @@ export default function Footer() {
       <div className="max-w-[1100px] md:mx-auto px-0 md:px-10 flex flex-col gap-6">
         {/* Centered nav links */}
         <div className="flex flex-wrap items-center justify-center gap-1 md:gap-x-8 md:gap-y-3">
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="text-[#e6efff] text-[14px] font-medium tracking-tight hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const isExternal = link.href.startsWith("mailto:") || link.href.startsWith("http");
+            const className = "text-[#e6efff] text-[14px] font-medium tracking-tight hover:text-white transition-colors";
+
+            return isExternal ? (
+              <a 
+                key={link.label} 
+                href={link.href} 
+                className={className}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.label} to={link.href} className={className}>
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Centered copyright */}
