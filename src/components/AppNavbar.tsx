@@ -53,7 +53,7 @@ export default function AppNavbar() {
           <Link
             to="/what-we-test"
             className={`${
-              isWhatWeTest ? "text-white/60" : "text-white"
+              isWhatWeTest ? "text-white" : "text-[#E6EFFF66]"
             } text-sm font-medium hover:text-white transition-colors`}
           >
             What we test
@@ -62,7 +62,7 @@ export default function AppNavbar() {
           <Link
             to="/#pricing"
             className={`${
-              isHome ? "text-white" : "text-whites"
+              isHome ? "text-white" : "text-[#E6EFFF66]"
             } text-sm font-medium hover:text-white transition-colors`}
             onClick={() => {
               if (pathname === "/") {
