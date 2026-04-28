@@ -32,7 +32,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: Menu pill */}
-        <div className="flex items-center gap-3 md:gap-8 bg-white/[0.12] backdrop-blur-[20px] px-4 md:px-10 h-10 rounded-full">
+        <div className="flex items-center gap-3 md:gap-8 bg-[#000A1926] backdrop-blur-[20px] px-4 md:px-10 h-10 rounded-full">
           <Link
             to="/what-we-test"
             className="text-white text-[13px] md:text-sm font-medium hover:text-white/80 transition-colors whitespace-nowrap"
